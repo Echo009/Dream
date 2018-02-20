@@ -38,6 +38,7 @@ BigData
 
 ### Hive
 
+
 Content      | Date
 :------- | :---------
 [Conceptions](./bigdata/doc/hive/conceptions.md)| 2017-11-21
