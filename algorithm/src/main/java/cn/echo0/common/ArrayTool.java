@@ -14,16 +14,16 @@ import java.util.stream.Stream;
 public class ArrayTool {
     /**
      * @param length
-     * @return length长度的整形数组
+     * @return length长度的正整型数组
      */
     public static int[] genRandomArray(int length) {
         int[] result = new int[length];
         final int[] indexs = new int[1];
-        Stream.generate(()-> new Random().nextInt(100))
+        Stream.generate(() -> new Random().nextInt(100))
                 .limit(length)
-                .forEach(integer -> {
-                    result[indexs[0]++]=integer;
-                });
+                .forEach(integer ->
+                        result[indexs[0]++] = integer
+                );
         return result;
     }
 }
