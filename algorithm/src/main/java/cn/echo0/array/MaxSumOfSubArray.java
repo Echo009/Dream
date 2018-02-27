@@ -58,9 +58,6 @@ public class MaxSumOfSubArray {
         return maxSum;
     }
 
-
-
-
     public static void main(String[] args) {
         int [] array = new int[]{1,-8,8,4,5,-5,9};
         System.out.println(maxSum(array));
