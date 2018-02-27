@@ -22,6 +22,7 @@ public class ArrayContainer {
      * 代表第一个位置的高度为3，第二个位置的高度为1....
      * 那么以这个数组为代表的容器可以装3格的水
      */
+    // 重点在于将问题转化
 
     public  static int volumeOfWater(int [] array){
 
