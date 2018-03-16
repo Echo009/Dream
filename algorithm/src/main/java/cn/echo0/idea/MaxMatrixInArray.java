@@ -3,7 +3,8 @@
 */
 package cn.echo0.idea;
 
-import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
 /**
  * @author Echo0
@@ -16,7 +17,7 @@ public class MaxMatrixInArray {
      * 求其中全是1的所有矩形区域中，
      * 最大的矩形区域为1的数量。
      */
-    private static Stack<Integer> stack = new Stack<>();
+    private static Deque<Integer> stack = new ArrayDeque<>();
 
     public static int maxMatrix(int[][] array) {
         if (array == null || array.length == 0) {
@@ -25,13 +26,9 @@ public class MaxMatrixInArray {
         int max = 0;
         // 从第一行开始往下统计
         // init 
-        int[] currentRow = null;
+        int[] currentRow = new int[array[0].length];
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (currentRow == null) {
-                    currentRow = array[i];
-                    break;
-                }
                 if (array[i][j] == 0) {
                     currentRow[j] = 0;
                     continue;
@@ -51,6 +48,9 @@ public class MaxMatrixInArray {
      * @return
      */
     private static int countMatrix(int[] currentRow) {
+        if (currentRow == null || currentRow.length == 0) {
+            return 0;
+        }
         int max = 0;
         for (int i = 0; i < currentRow.length; i++) {
             if (stack.isEmpty()) {
